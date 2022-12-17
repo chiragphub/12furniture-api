@@ -41,7 +41,7 @@ db.sequelize.sync().then(() => {
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Hi there, welcome to this tutorial." });
+  res.json({ message: "Hi there, welcome to 12 Furniture Api." });
 });
 
 // api routes
