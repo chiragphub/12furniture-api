@@ -13,7 +13,7 @@ module.exports = function(app) {
   });
 
   app.post(
-    "/.netlify/functions/api/auth/signup",
+    "/api/auth/signup",
     [
       verifySignUp.checkDuplicateUsernameOrEmail,
       verifySignUp.checkRolesExisted
@@ -22,22 +22,22 @@ module.exports = function(app) {
   );
 
   /********* Admin Section API */
-  app.get("/.netlify/functions/api/auth/userlist", controller.userlist);
+  app.get("/api/auth/userlist", controller.userlist);
   
-  app.put("/.netlify/functions/api/auth/sellerupdate",[authJwt.verifyToken],controller.sellerupdate);
-  app.delete("/.netlify/functions/api/auth/delete/:id",[authJwt.verifyToken], controller.delete);
-  app.put("/.netlify/functions/api/auth/changestatus",[authJwt.verifyToken],controller.changestatus);
-  app.post("/.netlify/functions/api/auth/changepassword",[authJwt.verifyToken],controller.changepassword);
+  app.put("/api/auth/sellerupdate",[authJwt.verifyToken],controller.sellerupdate);
+  app.delete("/api/auth/delete/:id",[authJwt.verifyToken], controller.delete);
+  app.put("/api/auth/changestatus",[authJwt.verifyToken],controller.changestatus);
+  app.post("/api/auth/changepassword",[authJwt.verifyToken],controller.changepassword);
 /********* End Admin Section API */
 
-  app.post("/.netlify/functions/api/auth/signin", controller.signin);
-  app.post("/.netlify/functions/api/auth/loginGoogle", controller.signinGoogle);
-  app.post("/.netlify/functions/api/auth/resetpassword",[authJwt.verifyToken],controller.resetpassword);
-  app.post("/.netlify/functions/api/auth/basicupdate",[authJwt.verifyToken],controller.basicupdate);
-  app.get("/.netlify/functions/api/auth/user",[authJwt.verifyToken],controller.user);
-  app.post("/.netlify/functions/api/auth/profile_image",[authJwt.verifyToken],controller.profile_image);
-  app.post("/.netlify/functions/api/auth/uploaddocument",controller.uploaddocument);
-  app.post("/.netlify/functions/api/auth/forgotpassword",controller.forgotpassword);
-  app.post("/.netlify/functions/api/auth/resetpassword-frontend",controller.resetpasswordfrontend);
+  app.post("/api/auth/signin", controller.signin);
+  app.post("/api/auth/loginGoogle", controller.signinGoogle);
+  app.post("/api/auth/resetpassword",[authJwt.verifyToken],controller.resetpassword);
+  app.post("/api/auth/basicupdate",[authJwt.verifyToken],controller.basicupdate);
+  app.get("/api/auth/user",[authJwt.verifyToken],controller.user);
+  app.post("/api/auth/profile_image",[authJwt.verifyToken],controller.profile_image);
+  app.post("/api/auth/uploaddocument",controller.uploaddocument);
+  app.post("/api/auth/forgotpassword",controller.forgotpassword);
+  app.post("/api/auth/resetpassword-frontend",controller.resetpasswordfrontend);
   
 };

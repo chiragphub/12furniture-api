@@ -14,5 +14,5 @@ router.post("/charge",[authJwt.verifyToken], orderController.charge);
 router.post("/checkCoupon",[authJwt.verifyToken], orderController.checkCoupon);
 router.post("/userLastAddress", orderController.userLastAddress);
   
-  app.use("/.netlify/functions/api/orders", router);
+  app.use("/api/orders", router);
 };

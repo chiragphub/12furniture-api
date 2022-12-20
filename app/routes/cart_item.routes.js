@@ -14,5 +14,5 @@ module.exports = app => {
 
   router.delete("/:id", cartItemController.delete);
 
-  app.use("/.netlify/functions/api/cartitem", router);
+  app.use("/api/cartitem", router);
 };

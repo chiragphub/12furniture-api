@@ -12,29 +12,29 @@ module.exports = function(app) {
     next();
   });
 
-  app.get("/.netlify/functions/api/test/all", controller.allAccess);
+  app.get("/api/test/all", controller.allAccess);
 
-  app.get("/.netlify/functions/api/test/user", [authJwt.verifyToken], controller.userBoard);
+  app.get("/api/test/user", [authJwt.verifyToken], controller.userBoard);
 
   app.get(
-    "/.netlify/functions/api/test/mod",
+    "/api/test/mod",
     [authJwt.verifyToken, authJwt.isModerator],
     controller.moderatorBoard
   );
  
   app.get(
-    "/.netlify/functions/api/test/admin",
+    "/api/test/admin",
     [authJwt.verifyToken, authJwt.isAdmin],
     controller.adminBoard
   );
 
 
-  app.get("/.netlify/functions/api/user/", [authJwt.verifyToken], controller.list);
-  app.delete("/.netlify/functions/api/user/:id", [authJwt.verifyToken], controller.delete);
-  app.post("/.netlify/functions/api/user/changePassword", [authJwt.verifyToken], controller.changePassword);
-  // app.put("/.netlify/functions/api/user/:id", [authJwt.verifyToken], controller.update);
+  app.get("/api/user/", [authJwt.verifyToken], controller.list);
+  app.delete("/api/user/:id", [authJwt.verifyToken], controller.delete);
+  app.post("/api/user/changePassword", [authJwt.verifyToken], controller.changePassword);
+  // app.put("/api/user/:id", [authJwt.verifyToken], controller.update);
   app.post(
-    "/.netlify/functions/api/user/add",
+    "/api/user/add",
     [
       verifySignUp.checkDuplicateUsernameOrEmail,
       // verifySignUp.checkRolesExisted
@@ -42,7 +42,7 @@ module.exports = function(app) {
     controller.add
   );
   app.put(
-    "/.netlify/functions/api/user/:id",
+    "/api/user/:id",
     [
       // verifySignUp.checkDuplicateUsernameOrEmail,
       // verifySignUp.checkRolesExisted

@@ -18,5 +18,5 @@ router.post("/filter",productController.productFilter);
 
 /*********ecommerce API Section */
   
-  app.use("/.netlify/functions/api/products", router);
+  app.use("/api/products", router);
 };
