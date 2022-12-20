@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./node_modules/.bin/netlify-lambda serve src",
-    "build": "./node_modules/.bin/netlify-lambda build src"
+    "build": "npm-run-all --parallel build:**",
+    "build:app": "react-scripts build",
+    "build:functions": "netlify-lambda build functions"
   },
   "keywords": [
     "rest",
