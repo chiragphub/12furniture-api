@@ -101,7 +101,7 @@ function initial() {
 
 }
 
-module.exports = app;
+// module.exports = app;
 module.exports.handler = serverless(app);
 
 // cron.schedule('*/2 * * * *', () => {
