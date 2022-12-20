@@ -36,5 +36,5 @@ router.get("/list", settingController.list);
 
 router.get("/name-value-list", settingController.nameValueList);
 
-  app.use("/api/setting", router);
+  app.use("/.netlify/functions/api/setting", router);
 };

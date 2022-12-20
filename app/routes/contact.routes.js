@@ -12,5 +12,5 @@ router.put("/:id", contactController.update);
 
 /*********ecommerce API Section */
   
-  app.use("/api/contact", router);
+  app.use("/.netlify/functions/api/contact", router);
 };

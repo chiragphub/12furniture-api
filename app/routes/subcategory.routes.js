@@ -16,5 +16,5 @@ router.delete("/:id",[authJwt.verifyToken], subcategoryController.delete);
 router.put("/:id",[authJwt.verifyToken], subcategoryController.update);
 /*********category API Section */
 
-  app.use("/api/subcategory", router);
+  app.use("/.netlify/functions/api/subcategory", router);
 };

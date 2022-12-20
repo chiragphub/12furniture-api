@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -r dotenv/config server.js",
+    "dev": "./node_modules/.bin/netlify-lambda serve src",
     "build": "./node_modules/.bin/netlify-lambda build src"
   },
   "keywords": [
@@ -39,6 +39,7 @@
     "nodemon": "^2.0.15",
     "pm2": "^4.5.6",
     "sequelize": "^5.22.4",
+    "serverless-http": "^3.1.0",
     "sharp": "^0.28.3",
     "stripe": "^8.196.0",
     "uuid": "^8.3.2"

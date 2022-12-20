@@ -16,5 +16,5 @@ router.delete("/:id",[authJwt.verifyToken], couponController.delete);
 router.put("/:id",[authJwt.verifyToken], couponController.update);
 /*********coupon API Section */
 
-  app.use("/api/coupon", router);
+  app.use("/.netlify/functions/api/coupon", router);
 };

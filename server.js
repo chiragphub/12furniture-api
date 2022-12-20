@@ -7,9 +7,9 @@ const fileupload = require('express-fileupload');
 const app = express();
 var cron = require('node-cron');
 const path = require('path');
+const serverless = require("serverless-http");
 
-
-const corsOptions = { 
+const corsOptions = {
   //origin: config.SITE_URL
   origin: '*'
 };
@@ -92,14 +92,17 @@ function initial() {
     id: 1,
     name: "Admin",
     email: "admin@gmail.com",
-    password : "$2a$08$UOwhr9IgIkxTBvoC7zRwnuS9mOmgCDbqM38Isdy/KMCFPFEEjjo0e",
-    role_id : 3,
-    status : 1,
-    created_at : '2022-01-01 11:14:41',
-    updated_at : '2022-01-01 11:14:41'
+    password: "$2a$08$UOwhr9IgIkxTBvoC7zRwnuS9mOmgCDbqM38Isdy/KMCFPFEEjjo0e",
+    role_id: 3,
+    status: 1,
+    created_at: '2022-01-01 11:14:41',
+    updated_at: '2022-01-01 11:14:41'
   });
 
 }
+
+module.exports = app;
+module.exports.handler = serverless(app);
 
 // cron.schedule('*/2 * * * *', () => {
 //   cart_item.cartCron();
