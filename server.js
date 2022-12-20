@@ -6,6 +6,8 @@ const fileupload = require('express-fileupload');
 // const cart_item = require("./app/controllers/cart_item.controller.js");
 const app = express();
 var cron = require('node-cron');
+const path = require('path');
+
 
 
 const corsOptions = { 
@@ -41,7 +43,7 @@ db.sequelize.sync().then(() => {
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Hi there, welcome to this tutorial." });
+  res.sendFile(path.join(__dirname + '/preview.html'));
 });
 
 // api routes
